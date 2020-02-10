@@ -4,7 +4,11 @@
 #include "task.h"
 
 // FIXME - You will need to add #includes here (probably <mutex> at least)
+#include <queue>
+#include <thread>
+#include <vector>
 
+using std::thread;
 /** A collection of tasks that should be performed in parallel. */
 class Farm {
 public:
@@ -21,7 +25,8 @@ public:
 	void run();
 
 private:
-	// FIXME - You will need to add private member variables here
+	std::queue<Task*> TaskQueue;
+	std::vector<std::thread*> TaskThread;
 };
 
 #endif

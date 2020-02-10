@@ -7,6 +7,7 @@
 #include "farm.h"
 #include "task.h"
 #include "messagetask.h"
+#include <mutex> // to protect the queue of tasks
 
 // Import things we need from the standard library
 using std::cout;
