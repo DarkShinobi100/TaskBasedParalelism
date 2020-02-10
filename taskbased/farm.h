@@ -7,6 +7,7 @@
 #include <queue>
 #include <thread>
 #include <vector>
+#include <mutex>
 
 using std::thread;
 /** A collection of tasks that should be performed in parallel. */
@@ -27,6 +28,7 @@ public:
 private:
 	std::queue<Task*> TaskQueue;
 	std::vector<std::thread*> TaskThread;
+	std::mutex lock_threads;
 };
 
 #endif
